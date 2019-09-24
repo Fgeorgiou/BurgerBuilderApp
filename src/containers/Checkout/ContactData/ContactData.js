@@ -114,7 +114,7 @@ class ContactData extends Component{
                 this.props.history.push('/');
             })
             .catch(error => {
-                this.setState({ loading: false});
+                this.setState({loading: false});
             });
     }
 
@@ -139,7 +139,7 @@ class ContactData extends Component{
     inputChangedHandler = (event, inputIdentifier) => {
         const updatedOrderForm = {
             ...this.state.orderForm
-        }
+        };
         const updatedFormElement = {
             ...updatedOrderForm[inputIdentifier]
         };
@@ -182,7 +182,7 @@ class ContactData extends Component{
                         touched={formElement.config.touched}
                         changed={(event) => this.inputChangedHandler(event, formElement.id)} />
                 ))}
-                <Button btnType="Success" disabled={!this.state.isFormValid}>ORDER</Button>
+                <Button btnType="Success" disabled={!this.state.formIsValid}>ORDER</Button>
             </form>
         );
 
